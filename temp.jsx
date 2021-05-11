@@ -11,5 +11,4 @@
             return <span className="font-sans text-4xl"> {d} </span>;
           })}
 
-          <span className="font-sans text-4xl"> Data</span>
         </div>

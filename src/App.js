@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function App() {
   const [data, setData] = useState("");
-  const [list, setList] = useState([""]);
+  const [list, setList] = useState([]);
 
   function takeData(event) {
     setData(event.target.value);
@@ -35,19 +35,25 @@ function App() {
             type="submit"
             className="p-4 text-4xl text-white bg-purple-700 border-8 border-purple-700 rounded-full shadow-2xl hover:border-purple-800 hover:bg-blue-700"
           >
-            Add
+            +
           </button>
         </form>
 
         <div className="text-center">
-          <button
-            onClick={del}
-            className="p-4 text-4xl text-white bg-purple-700 border-8 border-purple-700 rounded-full shadow-2xl hover:border-purple-800 hover:bg-red-700"
-          >
-            Delete
-          </button>
+          {list.map((d) => {
+            return (
+              <div className="mx-8 content-center my-2 grid  grid-cols-2 justify-items-center">
+                <button
+                  onClick={del}
+                  className="p-4 text-4xl text-white bg-purple-700 border-8 border-purple-700 rounded-full shadow-2xl hover:border-purple-800 hover:bg-red-700"
+                >
+                  X
+                </button>
 
-          <span className="font-sans text-4xl">{list[list.length - 1]}</span>
+                <span className="p-4 font-sans text-4xl"> {d} </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
