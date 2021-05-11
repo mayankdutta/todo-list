@@ -13,6 +13,7 @@ function App() {
     setList(function () {
       return [...list, data];
     });
+    setData("");
   }
 
   function del(event) {
@@ -24,8 +25,8 @@ function App() {
     });
   }
   return (
-    <div className="content-center bg-gray-400 grid justify-items-center main">
-      <div className="flex flex-col py-8 my-4 bg-white border-4 border-gray-800 shadow-2xl space-y-8 rounded-2xl">
+    <div className="content-center mt-96 grid justify-items-center main">
+      <div className="py-8 my-4 bg-white border-8 border-purple-700 shadow-2xl justify-items-center space-y-8 rounded-2xl">
         <div className="p-4 font-sans text-6xl text-center text-white bg-purple-700 shadow-2xl">
           ToDo List
         </div>
